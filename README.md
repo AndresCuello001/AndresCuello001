@@ -10,7 +10,7 @@ and failure cases documented next to the code that enforces them.
 |---|---|
 | **Backend** | C# · .NET 8 · ASP.NET Core Minimal APIs · System.Text.Json with custom converters · built-in DI container · ProblemDetails middleware |
 | **Architecture** | Domain-centric layering · domain-driven modelling · separation of concerns · composition root · unit-of-work write boundaries · REST with RFC 7807 |
-| **Frontend** | React · Javascript · CSS — responsive interfaces |
+| **Frontend** | React · Javascript · CSS -- responsive interfaces |
 | **Quality** | Reqnroll (BDD) · NUnit · Playwright · RestSharp · Page Object Model |
 | **Delivery** | Docker multi-stage builds · GitHub Actions |
 
