@@ -17,15 +17,11 @@ and failure cases documented next to the code that enforces them.
 ## How the projects are structured
 
 **The dependency rule holds.** Entities, invariants and validation live in `Domain/`,
-which has no reference to infrastructure or to the web layer — dependencies point
-inward only. Field-level validation maps straight onto RFC 7807 Problem Details, while
-rules that need to see existing state raise domain exceptions and surface as `409`, so
-malformed input and state conflicts stay distinguishable to the caller.
+which has no reference to infrastructure or to the web layer, dependencies point
+inward only. Field-level validation maps straight onto RFC 7807 Problem Details.
 
 **One write boundary per application.** `MutateAsync` takes a delegate, applies it to
-freshly-loaded state under a single writer, then commits atomically. A rejected
-operation writes nothing — a five-line sale with one short line leaves storage
-untouched.
+freshly loaded state under a single writer, then commits atomically.
 
 **Composition at the edge.** Services are registered in one composition root and
 injected into handlers. The HTTP layer routes, serialises and returns status codes; it
